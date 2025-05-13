@@ -1,0 +1,6 @@
+{{ bootstrap.load_css() }}
+{% from 'bootstrap5/form.html' import render_form %} {% extends "base.html" %}
+ {% block main %}
+
+<h1>ADD</h1>
+{{ render_form(form) }} {% endblock%}

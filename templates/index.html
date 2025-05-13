@@ -1,0 +1,18 @@
+    {% extends "base.html" %}
+    
+    {% block main %}
+    <nav>
+      <a href="{{url_for('index')}}">Home</a>
+      <a href="">About</a>
+      <a href="{{url_for('add')}}">Add</a>
+      <a href="">Contact us</a>
+    </nav>
+    <div class="header">
+      <h1>Co-work, Everywhere</h1>
+      <p>
+        From coffee shops to hotel lobbies, discover everyday places to work and
+        connect.
+      </p>
+      <a href="{{url_for('cafes')}}" class="Home_btn">Explore London</a>
+    </div>
+    {% endblock%}

@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block main %}
+
+<div class="container">
+  <div>
+    <h1>LONDON</h1>
+    <p>
+      The best work and study-friendly cafes, restaurants, libraries, and hotel
+      lobbies in London. Expand your coworking map with our list of casual spots
+      with free and reliable Wi-Fi, ample power sockets, and comfy seating
+      areas!
+    </p>
+  </div>
+
+  {% for item in cafes %}
+
+  <div class="cafe">
+    <div>
+      <img src="{{item.img_url}}" alt="" />
+    </div>
+    <div>
+      <h2>{{ item.name }}</h2>
+      <h4>Facilities:</h4>
+      {% if item.has_sockets: %}
+      <span>Socket - </span>
+      {% endif %} {% if item.has_toilet: %}
+      <span>Toilet - </span>
+      {% endif %} {% if item.has_wifi: %}
+      <span>Wifi - </span>
+      {% endif %} {% if item.can_take_calls: %}
+      <span>Calls - </span>
+      {% endif %}
+      <h4>Number of Seats:</h4>
+      {{item.seats}}
+      <h4>Coffee Price:</h4>
+      {{item.coffee_price}}
+      <h4>Location:</h4>
+      <a href="{{item.map_url}}" target="_blank">Show on the map</a>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock%}
